@@ -2,11 +2,10 @@ import os
 import re
 import time
 import configparser
-from urllib.parse import urlparse
 from native import copytree
 import shutil
 
-"""Класс используемый для операций с логами"""
+"""Class used for operations with logs"""
 
 
 class Operations(object):
@@ -16,7 +15,7 @@ class Operations(object):
         self.allpath = allpath
         self.arg = arg
 
-    """Парсинг cookie"""
+    """Parsing cookie"""
 
     def parscookie(self):
         start_directory = os.getcwd()
@@ -62,7 +61,7 @@ class Operations(object):
                     copytree(os.path.dirname(path), os.getcwd())
         os.chdir(start_directory)
 
-    """Парсинг Telegram"""
+    """Parsing Telegram"""
 
     def parstg(self):
         start_directory = os.getcwd()
@@ -82,7 +81,7 @@ class Operations(object):
         else:
             os.chdir(start_directory)
 
-        """Парсинг дискорд"""
+        """parsing discord"""
 
     def parsdiscord(self):
         start_directory = os.getcwd()
@@ -109,7 +108,7 @@ class Operations(object):
                     f.write(f"{token}\n")
         os.chdir(start_directory)
 
-    """Парсинг паролей"""
+    """Password parsing"""
 
     def passpars(self):
         cfg = []
@@ -146,7 +145,7 @@ class Operations(object):
                         lst = re.findall(reg, text)
                         if len(lst) != 0:
                             for line in lst:
-                                tempset.add(f"{urlparse(line[0]).netloc}|{line[1]}|{line[2]}")
+                                tempset.add(f"{(line[0])}|{line[1]}|{line[2]}")
 
             else:
                 if loginpass == "True":
@@ -230,7 +229,7 @@ class Operations(object):
                     except (NameError, UnicodeEncodeError, IndexError) as e:
                         continue
 
-    """Чтение запросов"""
+    """Reading Requests"""
 
     @staticmethod
     def requestsread():

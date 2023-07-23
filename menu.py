@@ -9,7 +9,7 @@ class Menu:
     def __init__(self, allpath):
         self.allpath = allpath
 
-    """Стартовое меню"""
+    """start menu"""
 
     def startmenu(self):
         clear()

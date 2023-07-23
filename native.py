@@ -1,4 +1,5 @@
 import os
+"""native execution of the copetree function from the shutil library"""
 def copytree(src, dst):
     for item in os.listdir(src):
         s = os.path.join(src, item)
